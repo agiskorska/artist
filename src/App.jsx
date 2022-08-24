@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import {Header, MainLayout, Footer} from './components';
-import { Home } from './pages';
+import { MainLayout } from './components';
+import { Home, Albums } from './pages';
 function App() {
   const albums = [
     {id: 1, title: "Bird-Brains", year:2009},
@@ -14,6 +14,7 @@ function App() {
     <Routes>
       <Route path='/' element={<MainLayout albums={albums} />}>
         <Route index element={<Home albums={albums}/>}></Route>
+        <Route path='albums' element={<Albums albums={albums}/>}></Route>
       </Route>
     </Routes>
   )
